@@ -6,11 +6,12 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../utils/userSlice";
+import { Logo,user_avtAR } from "../utils/constant.js";
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unSubscribe =  onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
@@ -32,6 +33,7 @@ const Header = () => {
         // ...
       }
     });
+    return unSubscribe;
   }, []);
   const user = useSelector((store) => store.user);
   const handleSignOut = () => {
@@ -44,7 +46,7 @@ const Header = () => {
       <img
         alt="logo"
         className="w-44"
-        src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+        src={Logo}
       ></img>
       {user && (
         <div className="flex">
@@ -52,7 +54,7 @@ const Header = () => {
             alt="user-icon"
             className="w-12 h-12 p-2"
             src={
-              "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+             user.photoURL
             }
           />
           <button onClick={handleSignOut} className="font-bold text-white p-2">

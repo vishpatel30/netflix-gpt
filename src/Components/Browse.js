@@ -6,7 +6,7 @@ const Browse = () => {
     <div>
       {" "}
       <Header />
-      Browse
+      Browse Page Setting
     </div>
   );
 };

@@ -8,6 +8,7 @@ import {
   signInWithEmailAndPassword,updateProfile
 } from "firebase/auth";
 import {addUser } from "../utils/userSlice";
+import { user_avtAR } from "../utils/constant";
 
 const Login = () => {
   const [isSignInForm, setSignInForm] = useState(true);
@@ -40,7 +41,7 @@ const Login = () => {
           const user = userCredential.user;
         
           updateProfile(auth.currentUser, {
-            displayName: name.current.value, photoURL: "https://example.com/jane-q-user/profile.jpg"
+            displayName: name.current.value, photoURL: user_avtAR
           }).then(() => {
             // Profile updated!
              const {uid,email,displayName,photoURL}=auth.currentUser;
