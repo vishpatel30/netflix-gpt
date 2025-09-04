@@ -36,3 +36,16 @@ Bug fix: user not logged in redirected to login "/" page
 Unsubscribe to onAuthStateChange call
 Add Hard coded values to constant
  
+Register tmdb data
+MAke API call
+Custom Hook for now playing movies
+Create movies slice
+Update store with  movies data
+Embedded Youtube video and make it auto play and mute
+Tailwind classes to make it look awesome
+build secondary component
+build movie list
+build movie card
+img cdn
+Made the browse look better with tailwind
+usePopularmovies custom hook
