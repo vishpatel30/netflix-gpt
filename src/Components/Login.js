@@ -8,7 +8,7 @@ import {
   signInWithEmailAndPassword,updateProfile
 } from "firebase/auth";
 import {addUser } from "../utils/userSlice";
-import { user_avtAR } from "../utils/constant";
+import { bg_URL, user_avtAR } from "../utils/constant";
 
 const Login = () => {
   const [isSignInForm, setSignInForm] = useState(true);
@@ -51,7 +51,6 @@ const Login = () => {
             // An error occurred
              const errorCode = error.code;
           const errorMessage = error.message;
-          console.log(errorMessage);
           setErrorMessage(errorCode + " : " + errorMessage);
             // ...
           });
@@ -61,7 +60,6 @@ const Login = () => {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log(errorMessage);
           setErrorMessage(errorCode + " : " + errorMessage);
           // ..
         });
@@ -89,7 +87,7 @@ const Login = () => {
       <div>
         <img
           className="absolute"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/IN-en-20250721-TRIFECTA-perspective_cadc8408-df6e-4313-a05d-daa9dcac139f_large.jpg"
+          src={bg_URL}
         />
       </div>
       <form

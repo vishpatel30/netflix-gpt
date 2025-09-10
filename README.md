@@ -49,3 +49,6 @@ build movie card
 img cdn
 Made the browse look better with tailwind
 usePopularmovies custom hook
+GPT SEarch bar
+GPT SEarch PAge
+Bonus : Multi language support
